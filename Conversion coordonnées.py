@@ -11,9 +11,10 @@ def dms_a_decimale(d, d_m, d_s):
 print(dms_a_decimale(12,20,42))
 
 def decimale_a_dms(decimale):
-  degres = int(decimale) # avoir l'entier (correspond au °)
-  decim = (decimale - degres) # donne à decim la valeur des décimales restantes
-  
-  return degres, minutes, secondes
+  deg = int(decimale) # avoir l'entier (correspond au °)
+  reste = (decimale - deg) 
+  minutes = int(reste * 60)
+  reste = reste * 60 - minutes
+  secondes = int(reste*60)
+  return deg, minutes, secondes
 
-print(decimale_a_dms(12.345))
