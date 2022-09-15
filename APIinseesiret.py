@@ -8,14 +8,16 @@ api = ApiInsee(
 )
 
 def appel(siret):
-    data = api.siret(siret).get()
-    return data
+    try:
+        data = api.siret(siret).get()
+        print('siret trouvé')
+    except OSError as err:
+        print(err)
+    return 1
 
-for i in range(10):
+for i in range(2):
     sir = random.randint(10000000000000, 22222222222222)
     nombre = str(sir)
     start_time = time.time()
     appel('50352114800042')
-    print("%d --- %s seconds" % i, (time.time() - start_time))
-
-appel(str(10000000000000))
+    print(i, (time.time() - start_time))
