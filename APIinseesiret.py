@@ -1,6 +1,8 @@
 import random
 from api_insee import ApiInsee
 import time
+fic = open("sirets.txt", "r")
+
 
 api = ApiInsee(
     key = "o_kfvxFzWwDucmQrJqF7qA31Qp0a",
@@ -15,9 +17,12 @@ def appel(siret):
         print(err)
     return 1
 
-for i in range(2):
-    sir = random.randint(10000000000000, 22222222222222)
-    nombre = str(sir)
+for i in range(100):
+    sir = fic.readline() 
+    # sir = random.randint(13000545700325, 13000548109417)
+    # nombre = str(sir)
     start_time = time.time()
-    appel('50352114800042')
-    print(i, (time.time() - start_time))
+    appel(sir)
+    print(i, (time.time() - start_time), sir)
+
+fic.close()
