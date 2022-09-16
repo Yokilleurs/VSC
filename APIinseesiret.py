@@ -1,8 +1,8 @@
-import random
-from api_insee import ApiInsee
+#from api_insee import ApiInsee # Pour gros PC
 import time
-fic = open("sirets.txt", "r")
+from APIinseesiret import ApiInsee # Pour petit PC 
 
+fic = open("sirets.txt", "r")
 
 api = ApiInsee(
     key = "o_kfvxFzWwDucmQrJqF7qA31Qp0a",
