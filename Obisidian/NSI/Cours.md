@@ -1,0 +1,257 @@
+# Séquence 1
+
+Représentation des nombres.
+
+1. Représentation des nombres en machine.
+
+- Définitions :
+
+    **Numération positionnelle :** La numéraion positionnelle est une façon d'écrire un nombre où la position de chaque chiffre est importante.
+
+    **Base :** Une base est un entier positif supérieur ou égal à 2 qui permet de décomposer un nombre entier dans une numération positionnelle.
+
+    **Bit :** Le bit est l'unité de mesure en informatique désignant la quantité élémentaire d'information. Un bit ne peut prendre que deux valeurs, notées par convention 0 et 1, appelés chiffres binaires.
+
+    **Octet :** Un octet est une unité de mesure de quantité de données. C'est un ensemble de 8 bits.
+
+    **Division euclidienne :** La division euclidienne ou division entière est une opération sur deux entiers naturels, appelés dividende et diviseur, auxquels on associe deux entiers appelés quotient et reste.
+
+2. Ecriture d'un entier positif dans une base.
+
+- Cours :
+    Avec nos dix doigts, nous comptons et représentons naturellement les nombres dans la base 10. Appelée base décimale.
+    En informatique, les bases les plus utilisées sont les bases 2 et 16. Quelle que soit la base utilisée, la position appelée rang est enssentielle dans l'écirture de la valeur.
+
+- La base binaire :
+    En représentation machine, les données sont stockées en base 2 appelée base binaire. L'écriture en base binaire est composée uniquement des chiffres binaires : 0 et 1.
+
+- La base hexadécimale
+    Les nombres sont représentés en machine en base binaire. La base 16, appelée base hexadécimale, permet à l'humain de les manipuler facilement tout en facilitant leur conversion.
+    Pour écrire un entier positif dans la base hexa, il faut pouvoir écrire 10, 11, 12, 13, 14, 15 avec un seul caractère. Comme les 10 chiffres de 0 à 9 ne suffisent plus, il faut utiliser en plus les six premières lettres de l'alphabet : 
+    10 = A
+    11 = B
+    12 = C 
+    13 = D 
+    14 = E
+    15 = F
+    (Les lettres peuvent être écrites en minuscules ou majuscules.)
+
+    La base hexa est une des bases puissance de la base 2, donc les conversions de la base 2 à la base 16 et inversement sont facilitées.
+    En langage Python, on peut saisir un entier directement en écriture hexadécimale précédée de 0x.
+
+    Si l'on veut faire des calculs sur des valeurs exprimées sous forme de chaînes de caractères comme 0b1011, il faut les convertir avec la fonction Python int() quo prend pour arguments un chaîne de caractères et la base utilisée.
+     
+    La fonction Python native hex(x) convertit la variable x de type entier en une chaîne de caractères hexadécimaux précédée de 0x.
+
+3. Evaluation du nombre de bits nécessaires
+
+- Pour un entier positif
+    Sur n bits, on peut stocker 2^n entiers postiifs. Comme on doit coder l'entier nul, le plus grand entier positif que l'on puisse représenter est 2^n-1.
+    Pour évaluer le nombre de bits minimum nécessaires à l'écriture en base 2 d'un entier positif, il faut trouver la plus petite puissance de 2 qui soit strictement supérieure à l'entier à écrire.
+     Exemple : 
+     Comme 2^7 = 128 et 2^8 = 256 on a besoin de 8 bits pour écrire 200 en base binaire.
+
+- Pour la somme de deux nombres entiers
+    Sans connaître le résultat au préalable, le nombre de bits néxessaires pour stocker la somme de deux entiers positifs stockés sur n bits est n+1 bits.
+     Démonstration :
+     Sur n bits, le plus grand entier positif a pour valeur 2^n - 1. La plus grande somme possible de deux entiers sur n bits est le double de 2^n-1 donc 2x(2^n-1) = 2 x 2^n - 2 = 2^(n+1)-2
+     Or 2^(n+1)-2 < 2^(n+1)
+
+- Pour le produit de deux nombres entiers
+    Sans connaître le résultat au préalable, le nombre de bits nécessaires pour représenter le produit de deux entiers positifs représentés sur n bits est 2n bits.
+     Démonstration :
+     Sur n bits, le plus grand entier positif a pour valeur 2^n-1. Le plus grand produit est donc (2n-1)².
+     Identité remarquable blabla / ça donne 2^(2n) - 2^(n+1) + 1 < 2^(2n)
+    
+4. Addition binaire
+
+- De deux entiers positifs.
+    Pour additionner deux entiers positifs en base binaire, l'algorithme de calcul est le même qu'en base décimale, selon la table d'addition ci-contre : 
+     ```
+     0 + 0 = 1
+     0 + 1 = 1
+     1 + 1 = 0 et 1 de retenue.
+     Ce qui donnerais :   
+       0 0 1 1
+     + 0 1 1 0
+     ---------
+       1 0 0 1
+    ```
+
+- De deux entiers relatifs.
+    Pour effectuer l'addition de deux entiers relatifs (positifs et négatifs) dits aussi 'signés', avec le même algorithme que pour les entiers positifs, il faut utiliser la représentation en complément à 2n (ou complément à 2) où *n* est un nombre de bits fixé à l'avance.
+     
+    En effet, le nombre de bits utiliés pour cette représentation doit toujours être précisé. Par convention, le bit le plus à gauche vaut 1 pour les entiers négatifs et 0 pour les entiers positifs, ce qui permet de reconnaître immédiatement le signe d'un entier relatif.
+
+    Méthode de calcul du complément à 2.
+    -   Pour représenter un nombre positif, on utilise sa représentation en binaire, précédée d'autant de 0 que nécessaire pour avoir *n* bits au total.
+    -   Pour représenter un nombre négatif *- m* :
+        1. Coder en binaire le nombre *m* comme précédement ;
+        2. Inverser tous ses bits ( ce qu'on appelle prendre le "complément à 1") ;
+        3. Additionner 1 au nombre binaire obtenu, sans oublier les retenues éventuelles.
+
+    ```
+    Exemple : 
+      0 0 1 0  0 1 1 0
+      1 1 0 1  1 0 0 1
+    + 0 0 0 0  0 0 0 1
+    = 1 1 0 1  1 0 1 0 = -38
+    ```
+
+    Pour évaluer le nombre de bits nécessaires pour représenter un nombre en complément à 2,il faut prévoir un bit supplémentaire pour le bit de signe par raport à la représentation en base binaire. Ainsi, en complément à 2,on peut rerprésenter sur *n* bits les valeur sentières de -2^*n* à 2^(*n*-1)-1
+
+    Méthode rapide.
+    - Pour transformer un nomber en son complément à deux sans poser de calcul, il suffit de garder tous les bits depuis la droite jusqu'au premier 1 compris, puis d'inverser tous ceux qui sont à gauche du premier 1.
+    Exemple : 
+     Pour le nombre 38 en binaire : 0010 0110,
+     - On garde la partie à droite : 0010 01*10*;
+     - On inverse la partie de gauche après le premier un : *1101 10*10
+     L'écriture de -38 en complément à 2 est : 1101 1010
+
+5. Représentation approximative des nombres réels
+    En informatique, les nombres non entiers sont souvent représentés en nombres à virgule flottante, encore appelés nombres flottants.
+
+- Représentation approximative des nombres réels.
+    Compte tenu du nombre limité de bits en mémoire, tous les nombres réels ne sont pas exactement représentables en binaire. Ainsi, certains n nombres réels ont-ils un représentation binaire infinie.
+
+    Exemple : 
+     La représentation de 0,1 e base binaire est 0,0*0011* *0011*
+
+    Pour convertir la partie décimale d'un nombre flottant de la base décimale à la base binaire :
+    1. Multiplier par 2 la partie décimale ;
+    2. La partie entière du nombre obtenu donne le prochain chiffre après la virgule ;
+    3. Ne garder que la partie décimale du nombre obtenu et recommencer les calculs avec cette nouvelle valeur tant que celle-ci n'est pas nulle.
+
+    Exemple : 
+     Conversion de 5,125 en base binaire : La partie entière est 5 qui s'écrit 101 en binaire.
+      Multiplication par 2          Partie entière du produit       Partie décimale du produit
+     de la partie décimale     
+     ```
+     0,125 x 2 = 0,25          0              25
+     0,25 x 2 = 0,5                            5
+     0,5 x 2 = 1               1               0
+     ```
+
+- Le test d'égalité sur les nombres flottants
+    Il faut éviter de tester l'égalité sur deux nombres flottants
+     Exemple :
+     En python, et dans la plupart des langages de programmation, 0.1 + 0.2 n'est pas exactement égal à 0.3. 
+    
+    L'instruction isclose(7.00000001, 7) renvoie True.
+    L'importation du module Python math ou numpy est indispensable.
+    
+    Une autre possibilité ocnsiste à modifier le test a == b en calculant la valeur absolue de la différence entre a et b avec la précision souhaitée (ici 10**-9) ce qui donne abs(a - b) <= 10**-9
+
+    L'instruction abs(a - 5) <= 10**-8 permet de tester si la varialb e a de type float a une valeur proche de 5 avec une précision de 10**-8.
+
+    L'affichage d'un nombre flottant peut prêter à confusion à cause de sa représentation potentiellement approximative, et donc non exacte.
+    La fonction native round() permet de calculer des arrondis en précisant en arguements la valeur à arrondir et le nombre de décimales souhaitées
+
+# Séquence 2
+
+Encodage des caractères et expressions booléennes.
+
+1. Le calcul booléen
+
+- Définitions :
+    
+    **Variable booléenne :** Une variable booléenne est une variable qui ne peut prendre que deux valeurs : True (vrai) ou False (faux). Ces deux valeurs peuvent également être notées 1 ou 0 ou encore oui ou non.
+
+    **Opérateur booléen :** Un opérateur booléen est un opérateur mathématique qui relie deux variables binaires ou deux expressions binaires.
+
+    **Expression booléenne :** Une expression booléenne est une expression dont l'évaluation ne peut être que True ou False.
+
+    **Opérande :** Un opérande est un élément sur lequel s'applique un opératuer booléen.
+
+    **Table de vérité d'une expression booléenne :** La table de vérité d'une expression booléenne est un tableau qui comporte une colonne par variable d'entrée (ou opérande) et une colonne pour le résultat de l'opération appliqué aux opérandes. Puisque les variables booléennes ne peuvent prendre que deux valeurs, on peut dresser la liste de tous les cas possibles pour chacun des opérateurs.
+
+2. Quelques opérateurs booléens
+
+- L'opérateur **and**
+    L'opérateur booléen **and** est un opérateur de conjonction, noté &. Soit *a* et *b* deux variables booléeenes, *a* and *b* renvoie **True** quand les deux opérandes *a* et *b* ont pour valeur **True** toutes les deux, et **False** sinon.
+        Table de vérité de l'opérateur **and** :
+	
+	| a     | b     | a and b |
+	| ----- | ----- | ------- |
+	| False | False | False   |
+	| False | True  | False   |
+	| True  | False | False   |
+	| True  | True  | True    |
+
+- L'opérateur **or**
+    L'opérateur booléen **or** est un opérateur de disjonction, noté | ou +. Soit *a* et *b* deux variables booléennes, *a* or *b* renvoie **True** quand au moins un des deux opérandes *a* ou *b* a pour valeur **True**, et **False** sinon.
+        Table de vérité de l'opérateur **or** :
+           
+	| a     | b     | a and b |
+	| ----- | ----- | ------- |
+	| False | False | False   |
+	| False | True  | True    |
+	| True  | False | True    |
+	| True  | True  | True    |
+
+- L'opérateur **not**
+    L'opérateur booléen **not** est un opérateur de négation, noté ~ ou NON.
+    Soit *a* une variable booléenne, *not a* renvoie la négation de l'opérande *a*.
+
+    | a     | not a |
+    | ----- | ----- |
+    | True  | False |
+    | False | True  |
+
+- L'opérateur **xor**
+    L'opérateur booléen **xor** (appelé "ou exclusif") est un opérateur de disjonction exclusive (XOR pour eXclusive OR), noté (plus dans un rond) ou v souligné.
+    Soit *a* et *b* deux variables booléennes, *a xor b* renvoie **True** si un seul des deux opérandes *a* ou *b* a pour valeur **True**, et **False** sinon.
+    
+| a     | b     | a xor b |
+| ----- | ----- | ------- |
+| True  | True  | False   |
+| True  | False | True    |
+| False | True  | True    |
+| False | False | False   |
+
+3. Comment évaluer une expression booléenne ?
+
+Comme dans une expression mathématique classique, il faut tenir compte des parenthèses. Les opérateurs booléens prioritaires sont **not** puis **and** et enfin **or** ou **xor**.
+
+- Expression comportant uniquement des valeusr booléennes.
+    Dans une expression comportant uniquement des valeurs booléennes, il faut simplifier l'expression en tenant compte des parenthèses et des règles de priorité entre les opérateurs.
+     Exemple :
+     - True and True or (not False and False)
+     - True and True or (True and False)
+     - True and True or False
+     - True or False
+     - True
+
+- Expression comportant des variables booléennes
+    Pour évaluer une expression booléenne comportant des variables booléennes, on peut dresser une table de vérité de chaque partie de l'expression en tenant compte des parenthèses et des priorités entre les expressions.
+
+a or b and not a:
+
+| A     | B     | not A | not B | A or B and not A | 
+| ----- | ----- | ----- | ----- | ---------------- |
+| False | False | True  | True  | False            |
+| False | True  | True  | False | True             |
+| True  | False | False | True  | True             |
+| True  | True  | False | False | True             |
+
+- Caractère séquentiel de certains opérateurs en Python
+	Dans certains cas, l'interpréteur Python peut court-circuiter une partie d'une expression booléenne qui se situe à la droite d'un opérateur booléen. Ce raccourci ne peut se faire que lorsque l'évaluation de la partie de droite ne change pas le résultat final.
+	 Exemple :
+```Python
+def test(retour, texte):
+	print(texte)
+	return retour
+
+KeyboardInterrupt
+	a = test(True, "1") or test(False, "2")
+```
+Comme le premier appel à la fonction test() renvoie True, l'interpréteur Python n'évalue pas l'expression 
+```python
+	def test(retour, texte):
+	Print(texte)
+	return retour
+	a = test(True, "1") or test(False, "2")
+	1
+```
+après l'opérateur **or**. Ainsi on peut lire la valeur affichée par le premier appel à la fonction `test()` qui est 1 mais pas la deuxième qui devrait être 2.
+

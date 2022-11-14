@@ -1,0 +1,147 @@
+{
+  "main": {
+    "id": "391c61d69b0fec9e",
+    "type": "split",
+    "children": [
+      {
+        "id": "9aff65f9bd333ef9",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Cours.md",
+            "mode": "source",
+            "source": false
+          }
+        },
+        "group": "93cef46d4c86fcc1"
+      },
+      {
+        "id": "f513050db2008cdf",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Cours.md",
+            "mode": "preview",
+            "source": false
+          }
+        },
+        "group": "93cef46d4c86fcc1"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "88be508b61c42451",
+    "type": "split",
+    "children": [
+      {
+        "id": "8edfaa40de6c82be",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6541cc1194ed28f0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "4fc72b3a4b2bcd9e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e8cc37a18fff1f2c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e63e5d59178b8fca",
+    "type": "split",
+    "children": [
+      {
+        "id": "4601dee66b86f953",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "63def650a14478dd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Cours.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a209e4bf45710122",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Cours.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "734011d087c08520",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a7b9b9387e32490f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Cours.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "9aff65f9bd333ef9",
+  "lastOpenFiles": []
+}
