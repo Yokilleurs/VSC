@@ -171,32 +171,32 @@ Encodage des caractères et expressions booléennes.
     L'opérateur booléen **and** est un opérateur de conjonction, noté &. Soit *a* et *b* deux variables booléeenes, *a* and *b* renvoie **True** quand les deux opérandes *a* et *b* ont pour valeur **True** toutes les deux, et **False** sinon.
         Table de vérité de l'opérateur **and** :
 	
-	| a     | b     | a and b |
-	| ----- | ----- | ------- |
-	| False | False | False   |
-	| False | True  | False   |
-	| True  | False | False   |
-	| True  | True  | True    |
+| a     | b     | a and b |
+| ----- | ----- | ------- |
+| False | False | False   |
+| False | True  | False   |
+| True  | False | False   |
+| True  | True  | True    |
 
 - L'opérateur **or**
     L'opérateur booléen **or** est un opérateur de disjonction, noté | ou +. Soit *a* et *b* deux variables booléennes, *a* or *b* renvoie **True** quand au moins un des deux opérandes *a* ou *b* a pour valeur **True**, et **False** sinon.
         Table de vérité de l'opérateur **or** :
            
-	| a     | b     | a and b |
-	| ----- | ----- | ------- |
-	| False | False | False   |
-	| False | True  | True    |
-	| True  | False | True    |
-	| True  | True  | True    |
+| a     | b     | a and b |
+| ----- | ----- | ------- |
+| False | False | False   |
+| False | True  | True    |
+| True  | False | True    |
+| True  | True  | True    |
 
 - L'opérateur **not**
     L'opérateur booléen **not** est un opérateur de négation, noté ~ ou NON.
     Soit *a* une variable booléenne, *not a* renvoie la négation de l'opérande *a*.
 
-    | a     | not a |
-    | ----- | ----- |
-    | True  | False |
-    | False | True  |
+ | a     | not a |
+ | ----- | ----- |
+ | True  | False |
+ | False | True  |
 
 - L'opérateur **xor**
     L'opérateur booléen **xor** (appelé "ou exclusif") est un opérateur de disjonction exclusive (XOR pour eXclusive OR), noté (plus dans un rond) ou v souligné.
@@ -254,4 +254,22 @@ Comme le premier appel à la fonction test() renvoie True, l'interpréteur Pytho
 	1
 ```
 après l'opérateur **or**. Ainsi on peut lire la valeur affichée par le premier appel à la fonction `test()` qui est 1 mais pas la deuxième qui devrait être 2.
+
+4. Représentation d'un texte en machine
+
+Afin de représenter tout type de caractère  (lettre, symbole ou chiffre), il est indispensable d'utiliser un système de codage informatique, appelé encodage. L'encodage assure la correspondance entre les caractères et les nombres binaires stockés dans la mémoire de l'ordinateur.
+
+- Le codage ASCII est simple mais limité en termes de caractères à encoder, ce qui ne le rend pas universel. 7 bits suffisent pour coder un caractère.
+- La *norme ISO 8859-1* (ou Latin-1) permet d'encoder tous les caractères des principales langues européennes. Chaque caractère est codé sur 1 octet. Certains alphabets comme le cyrillique ou le polonais ont leur propre norme.
+- Le standart Unicode est universel et extensible si besoin. En revanche, il nécessite l'utilisation de 4 à 6 octets par caractères à encoder, ce qui allonge la taille du message.
+- La *norme UTF-8* est une représentation d'Unicode dont elle possède les avantages. Cet encodage est de taille variable, ce qui lui permet d'être moins gourmand en espace mémoire qu'Unicode. De plus, il est compatible avec ASCII, mais il est plus compliqué à gérer en machine.
+
+Le nombre de symboles hexadécimaux étant variabl,e le nombre de caractère contenus dans un fichier texte n'est pas déductible à partir de la taille du fichier. En octobre 2020, 95% des sites web étaient encodés en UTF8, ce qui permettait une uniformisation des pages et des navigateurs web.
+
+5. Ce qu'il faut savoir et savoir faire
+- [ ] Dresser la table d'une expression booléenne avec les opérateurs booléens : `and, or, not et xor`
+- [ ] Comprendre l'intérêt des différetnts systèmes d'encodage d'un texte en machine : les encodages ASCII, ISO 8859-1 et Unicode.
+- [ ] Convertir un fichier texte dans différents formats d'encodage
+
+
 
