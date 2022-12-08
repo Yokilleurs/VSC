@@ -313,10 +313,15 @@ Modification d'un p-uplet
 Fonction renvoyant un p-uplet de valeurs
 	En programmation fonctionnalle, il est indispensable d'utiliser des fonctions pouvant renvoyer un ensemble de valeurs réutilisables, contenues dans un p-uplet ou une liste.
 	Par exemple, on souhaite calculer les coordonnées $(x_1,x_2)$ du point I, milieu de $[AB]$ grâce à la fonction `milieu()` suivante :
+
 ```py
 def milieu(A, B):
 	xI = (A[0] + B[0]) / 2
 	yI = (A[1] + B[1]) / 2
 	return (xI, yI)
 ``` 
+
+Cette fonction renvoie les coordonnées $(x_1,y_1)$ du milieu du segment $[AB]$ sous forme d'un doublet $(x_1,y_1)$.
+Afin de pouvoir réutiliser les coordonnées $(x_1,y_1)$ du point I, il est possible de les afffecter à une unique variable ``coordonnees`` avec l'instruction Python suivante : `coordonnees = milieu((2,1), (3,5))`.
+La variable `coordonnees` sera alors de type `tuple` et les coordonnées du point I seront accessibles avec les deux instructions `coordonnees[0]` pour son abscisse et `coordonnees[1]` pour son ordonnée.
 
