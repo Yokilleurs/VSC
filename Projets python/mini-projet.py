@@ -20,6 +20,8 @@ def decimale_hexadecimale(n):
 
 def decimale_base(n, base):
     d = ''
+    if base == 1:
+        return "Base can't be 1"
     while n > 0:
         r = n%base
         n = n//base
@@ -27,6 +29,6 @@ def decimale_base(n, base):
             DecToHex = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'K', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
             r = DecToHex[r - 10]
         elif r > 36:
-            print('Base is too high')
+            print("Base is too high")
         d = str(r) + d
     return d

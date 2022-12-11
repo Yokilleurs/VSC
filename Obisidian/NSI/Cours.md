@@ -271,5 +271,57 @@ Le nombre de symboles hexadécimaux étant variabl,e le nombre de caractère con
 - [ ] Comprendre l'intérêt des différetnts systèmes d'encodage d'un texte en machine : les encodages ASCII, ISO 8859-1 et Unicode.
 - [ ] Convertir un fichier texte dans différents formats d'encodage
 
+# Séquence 3
 
+Les types construits.
+
+1. Types construits
+
+A partir des types de bases, il est possible de façonner de nouveaux types de variables, appelés **types construits**. Ceux-ci ont chacun leurs particularités. Choisir le bon type de variable est essentiel pour implémenter un algorithme dans un langage de programmation. Les trois types **p-uplet**, **tableau** et **dictionnaire** présentés ici sont génériques et peuvent être mis en oeuvre dans de nombreux langages de programmation. Ce chapitre utilise les appellations spécifiques du langage Python.
+
+2. Le p-uplet et le p-uplet nommé
+
+Définition : 
+	P-uplet : Un p-uplet (ou *tuple* en anglais) est une collection ordonnée d'éléments, appelés *composantes* ou *termes*. Chaque terme peut être de n'importe quel type.
+
+Le p-uplet est de type `tuple`
+Les termes du p-uplet ne sont pas modifiables par affection.
+
+On parlera d'un doublet pour un p-uplet avec 2 éléments(p = 2), d'un triplet pour 3 éléments (p =3), etc...
+
+Création d'un p-uplet 
+En langage Python, les termes d'un p-uplet sont séparés par des virgules. Les **parenthèses** ne sont pas obligatoires mais sont fortement conseillées pour la lisibité du code. 
+
+Exemple : 
+	Les instructions `t = (1, 2, 3)` ou encore `t = 1, 2, 3` créent le triplet `t`.
+	Un p-uplet ne contenant qu'un seul élément s'écrit également avec une virgule. Ceci permet d'éviter la confusion avec les parenthèses d'une expression mathématique, qui ne possède pas de virgule.
+Exemple : 
+	`t = (1, )` et non pas `t = (1)`
+
+Indexation des éléments d'un p-uplet
+	Pour un p-uplet de n éléments, les termes sont indexés de 0 à *n-1*
+Exemple :
+	Pour ``t = (1, 5, 8)``
+	``t[1]`` désigne le deuxième élément du triplet ``t`` qui vaut 5 et ``t[-1]`` ou ``t[len(t)-1]`` vaut 8.
+	Dans un p-uplet dit nommé, il est possible d'accéder aux éléments grâce à un nom plutôt qu'à un indice.
+	 Ce type de p-uplet n'existe pas dans Python, il doit être implémenté par un dictionnaire.
+
+Modification d'un p-uplet
+	Il n'est pas possible de modifier par affectation les termes d'un p-uplet après sa création. Un p-uplet est dit **non-muable**.
+	Si les valeurs des termes du p-uplet doivent être changées au fil du programme, alors il faudra choisir un autre type de variable, comme le tableau.
+
+Fonction renvoyant un p-uplet de valeurs
+	En programmation fonctionnalle, il est indispensable d'utiliser des fonctions pouvant renvoyer un ensemble de valeurs réutilisables, contenues dans un p-uplet ou une liste.
+	Par exemple, on souhaite calculer les coordonnées $(x_1,x_2)$ du point I, milieu de $[AB]$ grâce à la fonction `milieu()` suivante :
+
+```py
+def milieu(A, B):
+	xI = (A[0] + B[0]) / 2
+	yI = (A[1] + B[1]) / 2
+	return (xI, yI)
+``` 
+
+Cette fonction renvoie les coordonnées $(x_1,y_1)$ du milieu du segment $[AB]$ sous forme d'un doublet $(x_1,y_1)$.
+Afin de pouvoir réutiliser les coordonnées $(x_1,y_1)$ du point I, il est possible de les afffecter à une unique variable ``coordonnees`` avec l'instruction Python suivante : `coordonnees = milieu((2,1), (3,5))`.
+La variable `coordonnees` sera alors de type `tuple` et les coordonnées du point I seront accessibles avec les deux instructions `coordonnees[0]` pour son abscisse et `coordonnees[1]` pour son ordonnée.
 
