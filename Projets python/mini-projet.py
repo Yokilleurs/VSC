@@ -20,8 +20,8 @@ def decimale_hexadecimale(n):
 
 def decimale_base(n, base):
     d = ''
-    if type(n)!=type(base)!=int:
-        return "n and base must be an integer"
+    if type(n)!=int or type(base)!=int:
+        return "n and base must be integers"
     elif base < 2 or n < 0:
         return "Base can't be inferior than 2 and n must be a positive integer"
     while n > 0:
