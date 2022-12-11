@@ -20,14 +20,19 @@ def decimale_hexadecimale(n):
 
 def decimale_base(n, base):
     d = ''
-    if base == 1:
-        return "Base can't be 1"
+    if type(n)!=type(base)!=int:
+        return "n and base must be an integer"
+    elif base < 2 or n < 0:
+        return "Base can't be inferior than 2 and n must be a positive integer"
     while n > 0:
         r = n%base
         n = n//base
         if r > 9:
             DecToHex = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'K', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
-            r = DecToHex[r - 10]
+            try: 
+                r = DecToHex[r - 10]
+            except IndexError as err:
+                return f"Erreur : {err}. Rest is too high for base {base}"
         elif r > 36:
             print("Base is too high")
         d = str(r) + d
