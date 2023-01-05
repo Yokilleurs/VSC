@@ -325,3 +325,54 @@ Cette fonction renvoie les coordonnées $(x_1,y_1)$ du milieu du segment $[AB]$ 
 Afin de pouvoir réutiliser les coordonnées $(x_1,y_1)$ du point I, il est possible de les afffecter à une unique variable ``coordonnees`` avec l'instruction Python suivante : `coordonnees = milieu((2,1), (3,5))`.
 La variable `coordonnees` sera alors de type `tuple` et les coordonnées du point I seront accessibles avec les deux instructions `coordonnees[0]` pour son abscisse et `coordonnees[1]` pour son ordonnée.
 
+
+3. Le tableau (appelé liste en Python)
+
+Définition: 
+	Tableau : un tableau eswt une collection ordonnée d'éléments de n'importe quel type organisés séquentiellement (les uns à la suite des autres.)
+
+En Python, un tableau est appelé liste, il est de type `list`.
+Le tableau est modifiable par affection, on dit qu'il est muable, ou mutable.
+
+Création d'une liste:
+	Dnas une liste, les termes doivent être séparés par des virgules et entourés de crochets.
+
+Exemple : 
+	L'instruction `L = [1, 5, 8]` crée la liste `L`
+
+Création d'une liste de liste :
+	Un tableau à double entrée, appelée matrice, peut être représentée par une liste de listes
+
+Exemple : 
+	L'instruction `L2 = [[3, 4], [8,1]]` crée la liste L2, représentant le tableau ci-dessous
+
+ | 3   | 4   |
+ | --- | --- |
+ | 8   | 1   |
+
+Indexation des éléments de la liste :
+	Les termes d'une liste sont idexés de 0 à n-1 pour une liste de n éléments. On peut accéder en lecture à l'élément de rang ``i`` gràce à la syntaxe ``L[i]`` 
+
+Exemple : 
+	`L[1]` désigne le deuxième élément de la liste qui vaut 5. La valeur 1 de l'instruction est appelée l'indice, ou l'index, de position.
+
+Modification de la liste par affectation : 
+	Les termes d'une liste peuvent être modifiés par affectation au fil du programme.
+
+Exemple : 
+	L'instruction ``L[2] = 14`` remplace le troisième élément, qui vaut ``8``, par la valeur ``14``. La liste L devient alors ``[1,5,14]``
+
+Création d'une liste par compréhension : 
+	Il est possible et élégant de construire uneliste en compréhension avec le langage Python. C'est très pratique pour créer, transformer ou filtrer une liste.
+	Pour créer une liste en compréhension avec python, on utilise la syntaxe ``for i in range()`` et éventuellement une condition de filtrage
+
+Exemple :
+	``L3 = [i**2 for i in range(5) if i**2 % 2 == 0]``
+	La liste ci dessus contient les valeurs de i² pour i variant de 0 à 4, à condition que i² soit divisible par 2. La variable `L3` contient la liste ``[0, 4, 16]``
+
+Les itérables :
+	Un itérable est un objet dont les valeurs sont accessibles grâce à une boucle for, par exemple. les types str, tuple, list et dict sont des itérables fréquents en Python.
+
+Condition de filtrage :
+	Ajotuer une condition de filtrage permet de ne sélectionner que certains éléments de la liste, grâce à une expression booléeene ne pouvant prendre que deux états : True ou False. Si la condition est vraie, les éléments seront ajoutés à la liste.
+
