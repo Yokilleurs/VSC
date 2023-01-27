@@ -376,3 +376,43 @@ Les itérables :
 Condition de filtrage :
 	Ajotuer une condition de filtrage permet de ne sélectionner que certains éléments de la liste, grâce à une expression booléeene ne pouvant prendre que deux états : True ou False. Si la condition est vraie, les éléments seront ajoutés à la liste.
 
+4. Le dictionnaire
+
+Définition : 
+	Dictionnaire : Un dictionnaire est une collection nion ordonnée d'éléments. Ces éléments sont constitués d'une clé assciée à une valeur.
+
+Les clés peuvent être de n'importe quel type non muable : entier, chaîne de caractères, p-uplet.
+
+Création d'un dictionnaire
+	Un nouveau dictionnaire est créé par affectation et nécessite l'utilisation d'accolades, ce qui le différencie du puplet et du tableau (appelé liste en Python). Une valeur est associée à une clé selon la syntaxe ``clé: valeur``.
+
+Exemple : 
+	L'instruction ``annuaire = {10 : 'Paul', 20 : 'Tom', 30 : 'Nadia'`` crée e dictionnaire ``annuaire``
+
+Accès aux éléments du dictionnaire
+	Les éléments du dictionnaire ne sont pas indexés. Il est donc impossible d'afficher son n-ième élément. On accède ç une valeur grâce à la clé qui lui est associée.
+C'est la raison pour laquelle les clés d'un dictionnaire doivent êtres toutes différentes.
+
+Exemple : 
+	``annuaire[0]`` renvoie ainsi une erreu de clé "KeyError", tandis que ``annuaire[10]`` renvoie 'Paul' car le nombre 10 est la clé du dictionnaire à laquelle esst associée la valeur ``'Paul'``
+
+Modification du dictionnaire ;
+	L'instruction del annuaire[10] supprimera l'entrée ``10: 'Paul'`` du dictionnaire ``annuaire``. L'instruction ``annuaire[30] = 'Hamza'`` remplace la valeur ``"Nadia"`` par la valeur ``'Hamza'`` ou crée une nouvelle entrée dans le dictionnaire si la clé 30 n'existait pas.
+
+Methodes specifiques du dictionnaire :
+	En Python, les méthodes items(), keys() et values() permettent d'accéder aux éléments du dictionnaire. 
+
+Exemple : 
+	annuaire.items() renvoie la collection de tous les objets du dictionnaire annuaire. 
+	annuaire.keys() renvoie la collection itérable de toutes les clés du dictionnaire annuaire. 
+	annuaire.values() renvoie la collection itérable de toutes les valeurs du dictionnaire annuaire.
+
+|                                       | Puplet      | Tableau    | Dictionnaire                                     |
+| ------------------------------------- | ----------- | ---------- | ------------------------------------------------ |
+| Notation                              | (1,2,3)     | [1,2,3]    | {'key':'value'}                                  |
+| Construction                          | Puplet Vide | Liste vide | Dictionnaire vide                                |
+|                                       | t=()        | t=[]       | t={}                                             |
+| Elements internes de différents types | Oui         | Oui        | Oui, à condition que les key soient du même type |
+| Lecture du contenu                    | Classique   | Classique  | Only avec key                                    |
+
+
