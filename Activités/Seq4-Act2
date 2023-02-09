@@ -1,0 +1,31 @@
+import csv
+#ouverture du fichier csv
+def lecture_fichier(nom_fichier):
+    with open(nom_fichier, mode='r') as fichier_ouvert:
+        return list(csv.reader(fichier_ouvert, delimiter=","))
+
+def detecter_doublons(table):
+    doublons = []
+    for i in range (1, len(table)):
+        for j in range(i + 1, len(table)):
+            if table[i][1:] == table[j][1:]:
+                doublons.append([i, j])
+    return doublons
+
+def selectionner(table, critere):
+    selection=[]
+    for i in range(1,len(table)):
+        if critere(table[i]):
+            selection.append(table[i][0])
+    return selection
+
+def exporter(tableau,fichier):
+    file = open(fichier, "w", newline='')
+    writer = csv.writer(file)
+    writer.writerows(tableau)
+
+table = lecture_fichier("stations.csv")
+
+selection = selectionner(table, lambda x: float(x[-1]) < 50)
+
+L = [table[int(i)] for i in selection]

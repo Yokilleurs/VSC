@@ -415,4 +415,56 @@ Exemple :
 | Elements internes de différents types | Oui         | Oui        | Oui, à condition que les key soient du même type |
 | Lecture du contenu                    | Classique   | Classique  | Only avec key                                    |
 
+# Séquence 4
 
+Dans cette séquence, il s'agit de manipuler des tableaux doublement indexés (ou tables), implémentés en Python avec une liste de listes.
+	Exemple :
+	Dans le tableau doublement indexé ci-dessous, les pensionnaires d'un zoo et leurs caractéristiques sont rangés en lignes et en colonnes.
+
+| id  | Nom    | Race   |
+| --- | ------ | ------ |
+| 1   | Wanita | Tigre  |
+| 2   | Punk   | Loutre |
+| 3   | Toko   | Toucan | 
+
+1. Omporter ou exporter une table
+
+Le format CSV
+	Définition:
+	Format CSV : Le format CSV (de l'anglais Comma Separated Values) est un format de fichiers facile à manipuler avec Excel et qui permet d'échanger des données entre différents systèmes ou logiciels.
+
+Dans une table au format CSV, la première ligne est composée de descripteurs. Sur les lignes suivantes, les données correspondant aux descripteurs sont rangées en lignes. Chaque descripteur définit un ensemble de champs.
+Sur chaque ligne, les descripeurs et les données sont séparés par des virgules ou des points-virgules, qui jouent ici le rôle de caractère séparateur.
+
+id, nom, race
+1, Wanita, Tigre
+2, Punk, Loutre
+3, Toko, Toucan
+
+Importer une table depuis un fichier csv :
+	Définition :
+	Importer un fichier : importer un fichier est une opérration qui consiste à lire les informations d'un fichier externe au programme, de manière à pouvoir effectuer un traitement informatique sur les valeurs lues.
+	fichier.csv -------importation----> liste de listes en python.
+.
+	Exemple :
+	Après importation, la liste de listes suivante contient toutes les informations du fichier CSV initial.
+	*Remarque* : Pour créer une liste de listes en Python, il est égalemen possible d'importer un fichioer texte tabulé.
+.
+	Définition : 
+	Exporter une table vers un fichier : Exporter une table vers un fichier est une opération qui consiste à enregistrer les valeurs d'une table puthon dans un fichier externe au programme. C'est l'opération inverse d'une importation.
+	liste de listes en python ------exportation------> fichier.csv
+
+LES COURS QUE J'AI SKIIIIP
+
+6. Construire une nouvelle table.
+* Construction d'une table
+	Il est possible de construire une nouvelle table en combinant les données des deux tables différentes
+
+Définition : 
+	Fusion : une opération de fusion consiste à rassembler les données issues de deux tables différentes en une seule table.
+
+* Limites
+	Pour pouvoir fussionner deux tables, il est nécessaire qu'elles partagent les mêmes descritpeurs et que les descripteurs soient rangés dans le même ordre.
+
+Exemple : 
+	Les deux tables t1 et t2 peuvent fusionner grâce à un opérateur de concaténation +, car elles partagent les mêmes descripteurs.

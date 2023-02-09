@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "9de5b6e329c76276",
+        "id": "9a312907cde47766",
         "type": "tabs",
         "children": [
           {
-            "id": "fb3215404931b615",
+            "id": "5b9d60bc0592e96b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Cours.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Cours.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Cours.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Cours.md"
+              }
             }
           }
         ]
@@ -139,7 +147,7 @@
       "command-palette:Ouvrir la palette de commandes": false
     }
   },
-  "active": "fb3215404931b615",
+  "active": "5b9d60bc0592e96b",
   "lastOpenFiles": [
     "Cours.md"
   ]
