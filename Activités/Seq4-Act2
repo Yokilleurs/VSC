@@ -29,3 +29,5 @@ table = lecture_fichier("stations.csv")
 selection = selectionner(table, lambda x: float(x[-1]) < 50)
 
 L = [table[int(i)] for i in selection]
+
+list = [i*4 for i in range(10)]
