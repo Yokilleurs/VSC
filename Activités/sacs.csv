@@ -1,0 +1,11 @@
+id,nom,longueur,largeur,hauteur,couleur,poids,prix_HT,fabrique en France
+1,trousse,20,6,7,bleu,150,18,oui
+2,polochon,50,25,25,rouge,450,79,oui
+3,cabas,35,14,30,bleu,330,95,non
+4,besace,24,21,9,marron,500,84,oui
+5,banane,23,9,13,noir,260,28,oui
+6,baluchon,61,38,22,beige,900,145,non
+7,sac à dos,30,40,18,gris,375,50,oui
+8,seau,24,25,13.5,noir,430,110,oui
+9,wrist bag,27,16.5,3.5,bleu,125,28,non
+10,minaudiere,23,5,8,noir,160,35,oui

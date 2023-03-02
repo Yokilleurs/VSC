@@ -21,7 +21,7 @@ def selectionner(table, critere):
     selection=[]
     for i in range(1,len(table)):
         if critere(table[i]):
-            selection.append(table[i][0])
+            selection.append(table[i])
     return selection
 
 
@@ -33,3 +33,11 @@ recherche_3 = [i for i in selectionner(table, lambda x: str(x[-2]) == 'South Ame
 
 recherche_4 = [(table[i][1],table[i][3]) for i in range(1,len(table)) if (float(table[i][3])-2.333333 <= 1) and (float(table[i][3])-2.333333 >= -1)]
 
+sacs = lecture_fichier('sacs.csv')
+
+s = sorted(sacs[1:], key = lambda item: float(item[2]) * float(item[3]) * float(item[4]))
+s3 = s[:5]
+
+s5 = sorted(sacs[1:][1:], key = lambda x: x[1])
+
+s6 = [i[1] for i in range(len(sacs)) if ]
