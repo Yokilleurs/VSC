@@ -32,4 +32,64 @@ Interactivité de la page
 4. Composants graphiques d'une page web
 	L'attribut Value
 	L'attrbiut value définit lma valeur par défaut qui sera affichée dans l'élément au cahrgement de la page web. Cette valeur est accessible et modifiable, notamment grâce à la méthode getElementById() (voir ci-après)
-	L'attribut
+	L'attribut ID (Identifiant unique)
+	Le côté dynamique dce la page web est assuré par la possible modification des valeurs des attributs des composants graphiques.
+	Pour pouvoir accéder indépendamment à chacun des composants, il faut pouvoir les identifier de manière unique : c'est le rôle de l'attribut ``id``. Chaque composant peut posséder un identifiant unique noté ``id``, composé d'une chaîne de caractères.
+	![[Pasted image 20230407111950.png]]
+	Chaque composant devient alors manipulabe abec un script. On peut aussi modifier l'aspect d'un composant avec du code CSS.
+	Le DOM (Document Object Model) d'une page HTML est la représentation de la page sous forme d'objets qu'il est possible de manipuler. On peut le modéliser avec la structure d'un arbre, composé de branches et de feuilles, qui représentent les parents et leurs enfants.
+	Les objets du DOM peuvent représenter une fenêtre, un document, une phrase, un style etc...
+	Le DOM représente le document affiché par une structure en arbre, comportant des noeuds.
+	Le DOM est présent dans le navigateurs. Sa manipulation peut être facilitée par des bibliothèques JS, comme jQuery.
+	
+	La méthode getElementById
+	Cette méthode est l'une des onctions les plus utiles du DOM HTML car elle permet de renvoyer l'objet dont l'identifiant id est donné en paramètre de la fonction.
+	Il est alors possible de modifier par un scriupt les attributs de l'objet, la page devient dynamique.
+	document.getElementById("texte1").value; renvoie "Hello !" : c'est la valeur de l'attribut value du composant ayant pour identifiant "texte1"
+	document.getElementById("texte1").value = "Bonjour"; change le contenu du composant ayant pour identifiant "texte1" et le remplace par "Bonjour".
+
+5. Ecrire une fonction en JS
+	Le langage JS permet l'écriture de scripts côté client, il deveient possible de calculer ou d'interagir avec tous les composants graphiques de la page. Il est préférable d'enregistrer les scripts JS dans un fichier JS externe à la page web.
+	Les scripts JS doivent être écrits avec précision, car ils sont sensibles à la casse (majuscules et minuscules.)
+	En JS, il est obligatoire de déclarer une variable avant son affectation. Plusieurs mots clés sont possibles, comme var let et const. Le mot clé let donne à la vriable une portée locale, c'est à dire qu'elle ne sera accessible que dans le corps de la fontion. 
+
+| évènement       | description                                              |     |
+| --------------- | -------------------------------------------------------- | --- |
+| ```on change``` | un composant HTML a été changé                           |     |
+| `onclick`       | L'utilisateur a cliqué sur un composant HTML             |     |
+| `onmouseover`   | L'utilisateur a survolé un composant HTML avec la souris |     |
+| `onmouseout`    | L'utulisateur appuie sur une touche du clavier.          |     |
+| `onkeydown`     | L'utilsateur appuie sur une touche du clavier            |     |
+| `onload`        | Le navigateur web a fini de charger la page HTML         |     |
+
+
+Exemples: L'instruction suivante permet d'appeler la fonction JS Date() à chaque chargement de la page web : 
+	`<body onload="Date()">`
+
+L'instruction suivante permet d'appeler la fonction Calcul() à chaque clic sur un bouton :
+```
+	<input type="button" onclick="Calcul()"
+	value="Convertir">
+```
+
+L'analyse et le traitement du formulaire devnat être effectués côté serveur, la page du formulaire sera écrite en langage PHP. Un 
+un fomulaire simple est introduit dans une page web avec la balise ``<form>``
+```
+<form method="post" action="cible.php">
+</form>
+```
+
+En cliquant sur un bouton envoyer, les contenus des zones de texte du formulaire seront transmis à une page cible.php sous forme de paramètres directement intégrés dans le requête HTTP envoyée par le client au serveur.
+
+Le protocole SSL, ou plus récemment TLS, foncctionne également sur un modèle client serveur. Il assure : 
+- L'intégrité des données échangées entre le client et le serveur ;
+- L'authentification du serveur ;
+- La confidentialité des données échangées grâce à une transmission chiffrée (numéro de carte bancaire, mot de passe, etc...)
+
+Une transmission chiffrée se reconnaît de la manière suivante : 
+- présence d'un cadenas dans la barre d'adresse du navigateur web :
+- mention HTTPS au lieu de HTTP au début de l'URL
+Il faut noter que le côté sécurisé de la transmission ne doit pas dispenser l'utilisateur d'exercer son sens critique. 
+
+VOIR PHOTO EXEMPLE
+Un cadenas et la mention HTTPS sont bien présents. Pourtant l'URL véritable du site est avec un .fr. L'extension est remplacée par .app ce qui indique que le site web est un site pirate de phishing.
