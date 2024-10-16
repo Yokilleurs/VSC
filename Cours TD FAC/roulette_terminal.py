@@ -34,6 +34,7 @@ def saisie_continue():
         return False
     else:
         print("Veuillez choisir parmis 'oui', 'non', 'o', 'n', 'O', 'N'.")
+        saisie_continue()
 
 def afficher_mise(nom: str, reste: int) -> None:
     """Affiche un message demandant au joueur dont le nom est `nom`
@@ -60,7 +61,7 @@ def afficher_pari(nom: str, reste: int, mise: int) -> None:
 from roulette import pari_valide
 
 def saisie_pari(reste: int) -> str:
-    """Attend la saisie d’un pari et renvoie ce pari.
+    """Attend la saisie d un pari et renvoie ce pari.
     Précondition : reste >= 0
     """
     return str(input())
