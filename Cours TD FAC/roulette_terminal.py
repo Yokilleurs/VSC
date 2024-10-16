@@ -16,15 +16,15 @@ def saisie_nom() -> str:
 
 def afficher_continue(nom: str, reste: int) -> None:
     """Affiche un message demandant au joueur dont le nom est `nom`
-    et possédant `reste` jetons s’il veut continuer.
+    et possédant `reste` jetons s il veut continuer.
     Précondition : reste >= 0
     """
     print(f"Le joueur {nom} ayant {reste} souhaite t-il continuer à jouer ?")
 
 def saisie_continue():
     
-    """Attend la saisie d’une réponse de type oui/non/o/n/O/N
-    et renvoie Vrai si l’utilisateur a indiqué vouloir continuer et Faux sinon.
+    """Attend la saisie d une réponse de type oui/non/o/n/O/N
+    et renvoie Vrai si l utilisateur a indiqué vouloir continuer et Faux sinon.
     Précondition : /
     """
     reponse = input()
@@ -44,7 +44,7 @@ def afficher_mise(nom: str, reste: int) -> None:
     print('Saisissez une mise')
 
 def saisie_mise(reste: int) -> int:
-    """Attend la saisie d’une mise et renvoie l'entier représenté par la valeur
+    """Attend la saisie d une mise et renvoie l'entier représenté par la valeur
     saisie.
     Précondition : reste > 0
     """
