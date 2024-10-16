@@ -3,5 +3,43 @@
     "markdown.occurrencesHighlight.enabled": false,
     "markdown.extension.toc.omittedFromToc": {
     
-    }
+    },
+    "oneDarkPro.bold": true,
+    "oneDarkPro.vivid": true,
+    "editor.tokenColorCustomizations": {
+        "[One Dark Pro Mix]": {
+            "textMateRules": [
+                  {
+                    "scope": "variable",
+                    "settings": {
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                 "scope": "keyword.operator",
+                 "settings": {
+                     "fontStyle": "bold",
+                    }
+                  },
+                  {
+                    "scope": "entity.name.function",
+                    "settings": {
+                      "fontStyle": ""
+                    }
+                  },                
+                  {
+                    "scope": "keyword.control.flow.python",
+                    "settings": {
+                      "fontStyle": "italic"
+                    }
+                  },
+                  {
+                    "scope": "storage.type.function.python",
+                    "settings": {
+                      "fontStyle": "italic"
+                    }
+                  },
+            ]
+        }
+        },
 }

@@ -469,6 +469,3 @@ Définition :
 Exemple : 
 	Les deux tables t1 et t2 peuvent fusionner grâce à un opérateur de concaténation +, car elles partagent les mêmes descripteurs.
 
-[[Démonstration]]
-
-[Classe DnD](https://www.dandwiki.com/wiki/Swordfighter_(5e_Class))
