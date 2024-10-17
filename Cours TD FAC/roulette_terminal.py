@@ -11,8 +11,15 @@ def saisie_nom() -> str:
     Précondition : /
     """
     print('Votre nom :')
-    nom = input()
-    return nom
+    return input()
+
+def saisie_reste() -> str:
+    """Renvoie la saisie du reste de l'utilisateur
+    Précondition : /
+    """
+    print('Votre mise :')
+    return int(input())
+    
 
 def afficher_continue(nom: str, reste: int) -> None:
     """Affiche un message demandant au joueur dont le nom est `nom`
@@ -55,7 +62,7 @@ def afficher_pari(nom: str, reste: int, mise: int) -> None:
     et possédant `reste` jetons sur quoi il veut parier `mise` jetons.
     Précondition : reste >= 0, mise > 0
     """
-    print("Choisisez un pari (exemples : rouge, impaire, 14, passe, ...)")
+    print(f"{nom}, Choisisez un pari (exemples : rouge, impaire, 14, passe, ...), il vous reste {reste} jetons après avoir misé {mise}.")
 
 # À décommenter pour la partie facultative
 from roulette import pari_valide

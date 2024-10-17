@@ -30,13 +30,13 @@
                   {
                     "scope": "keyword.control.flow.python",
                     "settings": {
-                      "fontStyle": "italic"
+                      "fontStyle": "bold"
                     }
                   },
                   {
                     "scope": "storage.type.function.python",
                     "settings": {
-                      "fontStyle": "italic"
+                      "fontStyle": "bold"
                     }
                   },
             ]
