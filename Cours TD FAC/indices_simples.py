@@ -13,7 +13,12 @@ def minimum(nombres: list[int]) -> int:
     $$$ minimum([0, 3, -1])
     -1
     """
-    
+    minima = nombres[0]
+    for i in range(len(nombres)):
+        if nombres[i] < minima:
+            minima = nombres[i]
+    return minima
+
 
 # Question 6
 
@@ -28,6 +33,7 @@ def regroupement(l1: list[int], l2: list[int]) -> list[tuple[int, int]]:
     $$$ regroupement([], [4, 5, 6])
     []
     """
+    return [(l1[i],l2[i]) for i in range(minimum([len(l1),len(l2)]))]
     
 
 # Question 7
