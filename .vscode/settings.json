@@ -16,9 +16,9 @@
                     }
                   },
                   {
-                 "scope": "keyword.operator",
-                 "settings": {
-                     "fontStyle": "bold",
+                    "scope": "keyword.operator",
+                    "settings": {
+                      "fontStyle": "bold",
                     }
                   },
                   {
@@ -26,7 +26,7 @@
                     "settings": {
                       "fontStyle": ""
                     }
-                  },                
+                  },
                   {
                     "scope": "keyword.control.flow.python",
                     "settings": {

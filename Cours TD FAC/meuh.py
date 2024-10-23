@@ -22,7 +22,7 @@ def bulle(texte: str) -> str:
 
 # Question 3
 
-def meugler(texte: str) -> None:
+def meugler(texte: str):
     """Affiche `texte` dans une bulle prononcée par la vache.
     >>> meugler("Bravo ! Continuez !")
      _____________________ 

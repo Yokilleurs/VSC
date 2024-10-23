@@ -47,12 +47,18 @@ def moyenne(notes: list[float], coefficients: list[int]) -> float:
     $$$ moyenne([10.0, 10.0, 20.0], [1, 2, 3])
     15.0
     """
-    
+    somme_notes_decoeff = 0
+    for i in range(len(notes)):
+        somme_notes_decoeff += notes[i]*coefficients[i]
+    sommes_coefs = 0
+    for i in range(len(coefficients)):
+        sommes_coefs += coefficients[i]
+    return somme_notes_decoeff/sommes_coefs
 
 # Question 8
 
 def miroir(chaine: str) -> str:
-    """Rrenvoie les caractères de `chaine` dans l’ordre inverse.
+    """Renvoie les caractères de `chaine` dans l’ordre inverse.
     Précondition : /
     Exemple(s) :
     $$$ miroir("informatique")
@@ -60,7 +66,7 @@ def miroir(chaine: str) -> str:
     $$$ miroir("")
     ''
     """
-    
+    return chaine[::-1]
 
 # Question 9
 
@@ -73,7 +79,10 @@ def jointure(chaines_a_joindre: list[str], separateur: str) -> str:
     $$$ jointure(["tout seul"], '*')
     'tout seul'
     """
-    
+    joint = ''
+    for i in range(len(chaines_a_joindre)):
+        joint += chaines_a_joindre[i]+separateur
+    return joint[:len(joint)-len(separateur)]
 
 # Les questions suivantes sont plus difficiles, mais ce serait mieux que vous arriviez à les refaire pour le DSi
 
@@ -93,6 +102,12 @@ def argminima(liste: list[int]) -> list[int]:
     $$$ argminima([2, 1, 3, 1])
     [1, 3]
     """
+    minima = minimum(liste)
+    index_list = []
+    for i in range(len(liste)):
+        if liste[i] == minima:
+            index_list.append(i)
+    return index_list
     
 
 # Question 11
@@ -107,3 +122,4 @@ def suffixes(chaine: str) -> list[str]:
     $$$ suffixes('')
     ['']
     """
+    return [chaine[i:] for i in range(len(chaine)+1)]
