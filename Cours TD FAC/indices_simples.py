@@ -123,3 +123,54 @@ def suffixes(chaine: str) -> list[str]:
     ['']
     """
     return [chaine[i:] for i in range(len(chaine)+1)]
+
+def decoupage_simple(string):
+    temp = ''
+    final = []
+    for i in range(len(string)):
+        if string[i] == '+' or string[i] == '-':
+            final.append(temp)
+            final.append(string[i])
+            temp = ''
+        else:
+            temp += string[i]
+    if temp != '':
+        final.append(temp)
+    return final
+
+def calcul(liste):
+    if liste[1] == '+':
+        return int(liste[0]) + int(liste[2])
+    elif liste[1] == '-':
+        return int(liste[0]) - int(liste[2])
+
+def evaluation(liste):
+    return calcul(decoupage_simple(liste))
+
+def distribution(string):
+    final_indice_pair = []
+    final_indice_impair = []
+    for i in range(len(string)):
+        if i % 2 == 0:
+            final_indice_pair.append(string[i])
+        elif i % 2 == 1:
+            final_indice_impair.append(string[i])
+    return (final_indice_pair, final_indice_impair)
+
+def entiers(liste):
+    return [int(liste[i]) for i in range(len(liste))]
+
+def reduction(nombres, operateurs):
+    last_num = nombres[0]
+    for i in range(len(operateurs)):
+        if operateurs[i] == '+':
+            last_num += nombres[i+1]
+        elif operateurs[i] == '-':
+            last_num -= nombres[i+1]
+    return last_num
+
+def calculatrice(expression):
+    nombres_string, operateurs = distribution(expression)
+    nombres = entiers(nombres_string)
+    return reduction(nombres, operateurs)
+    return reduction(entiers(distribution(expression)[0]), distribution(expression)[1])
