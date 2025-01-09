@@ -173,4 +173,46 @@ def calculatrice(expression):
     nombres_string, operateurs = distribution(expression)
     nombres = entiers(nombres_string)
     return reduction(nombres, operateurs)
-    return reduction(entiers(distribution(expression)[0]), distribution(expression)[1])
+
+def decoupage(chaine_a_decouper : str , separateur : str) -> list[str]:
+    """Renvoie la liste des mots de `chaine_a_decouper` séparés
+    au niveau du caractère `separateur`.
+    Précondition : len(separateur) == 1
+    Exemples :
+    $$$ decoupage("25/10/2023", '/')
+    ['25', '10', '2023']
+    """
+    res = []
+    mot = ""
+    for caractere in chaine_a_decouper:
+        if caractere == separateur:
+            res.append(mot)         # on a fini un mot
+            mot = ""                # on commence un nouveau mot
+        else:
+            mot = mot + caractere   # on continue un mot
+    res.append(mot)                 # on rajoute le dernier mot, qui n'est pas
+                                    # suivi par un separateur
+    return res
+
+def zorglangue(texte:str)-> str:
+    liste_mots = decoupage(texte, ' ')
+    traduit = [mot[::-1] for mot in liste_mots]
+    return jointure(traduit, ' ')
+
+def indices_majuscules(texte:str)-> list[int]:
+    indices = []
+    for i, car in enumerate(texte):
+        if car.isupper():
+            indices.append(i)
+    return indices
+
+def en_minuscules(texte: str)-> str:
+    for i in indices_majuscules(texte):
+        texte = texte[:i] + texte[i].lower() + texte[i+1:]
+    return texte
+
+def changement_casse(texte, liste_indices):
+    for i in liste_indices:
+        texte = texte[:i] + texte[i].upper() + texte[i+1:]
+    return texte
+
